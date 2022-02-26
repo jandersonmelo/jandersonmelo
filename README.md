@@ -1,8 +1,3 @@
-# Janderson Melo
-
-I am JavaScript & C++ developer, focused on Backend development with Node.js and C++. In Front-end I use React Native.
-
-
 ### [Languages]↴
 ![JavaScript](https://img.shields.io/badge/JavaScript-20232A?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 ![C++](https://img.shields.io/badge/C%2B%2B-20232A?style=for-the-badge&logo=c%2B%2B&logoColor=007ACC)
