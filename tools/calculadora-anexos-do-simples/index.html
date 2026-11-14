@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Calcule a alíquota efetiva e o DAS do Simples Nacional nos Anexos I, II, III, IV e V. Veja faixa, parcela a deduzir e segregação dos tributos.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="author" content="Janderson Melo">
+  <meta name="theme-color" content="#059669">
+  <title>Calculadora Simples Nacional 2026: Anexos I a V | Janderson Melo</title>
+  <link rel="canonical" href="https://www.jandersonmelo.com.br/calculadora-anexos-do-simples">
+  <link rel="icon" type="image/webp" href="https://www.jandersonmelo.com.br/imgs/icon.webp">
+  <link rel="preload" href="https://www.jandersonmelo.com.br/fonts/Stolzl-Regular-500.woff2" as="font" type="font/woff2" crossorigin>
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Janderson Melo | Contador">
+  <meta property="og:title" content="Calculadora do Simples Nacional: Anexos I a V">
+  <meta property="og:description" content="Simule a alíquota efetiva, o DAS e a segregação dos tributos do Simples Nacional.">
+  <meta property="og:url" content="https://www.jandersonmelo.com.br/calculadora-anexos-do-simples">
+  <meta property="og:image" content="https://www.jandersonmelo.com.br/imgs/share.webp">
+  <meta property="og:image:type" content="image/webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Calculadora do Simples Nacional: Anexos I a V">
+  <meta name="twitter:description" content="Simule a alíquota efetiva, o DAS e a segregação dos tributos do Simples Nacional.">
+  <meta name="twitter:image" content="https://www.jandersonmelo.com.br/imgs/share.webp">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://www.jandersonmelo.com.br/calculadora-anexos-do-simples#webpage",
+          "url": "https://www.jandersonmelo.com.br/calculadora-anexos-do-simples",
+          "name": "Calculadora Simples Nacional 2026: Anexos I a V",
+          "description": "Calculadora de alíquota efetiva, DAS estimado e segregação de tributos dos cinco anexos do Simples Nacional.",
+          "inLanguage": "pt-BR",
+          "dateModified": "2026-11-13",
+          "isPartOf": {
+            "@type": "WebSite",
+            "name": "Janderson Melo | Contador",
+            "url": "https://www.jandersonmelo.com.br/"
+          },
+          "about": {
+            "@type": "Thing",
+            "name": "Simples Nacional"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://www.jandersonmelo.com.br/calculadora-anexos-do-simples#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "O que é RBT12?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "RBT12 é a Receita Bruta Total acumulada nos 12 meses anteriores ao período de apuração. Ela define a faixa, a alíquota nominal e a parcela a deduzir usadas no cálculo."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Como é calculada a alíquota efetiva do Simples Nacional?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A fórmula é: [(RBT12 × alíquota nominal) − parcela a deduzir] ÷ RBT12. A alíquota efetiva encontrada é aplicada sobre a receita tributável do mês."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Qual anexo do Simples Nacional devo escolher?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "O anexo depende da atividade exercida e, para algumas atividades de serviços, da apuração do fator R. Confirme a classificação da atividade e a regra aplicável com um contador."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "O Anexo IV inclui a CPP no DAS?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Não. Nas atividades tributadas pelo Anexo IV, a contribuição patronal previdenciária não está incluída no DAS e deve ser recolhida conforme as regras aplicáveis."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "O resultado da calculadora é o valor definitivo do imposto?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Não. A ferramenta oferece uma estimativa para a apuração regular. Situações como retenções, receitas com tratamento específico, sublimites e início de atividade podem alterar o cálculo."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  </script>
+  <style>
+    @font-face {
+      font-family: "Stolzl";
+      src: url("https://www.jandersonmelo.com.br/fonts/Stolzl-Book-400.woff2") format("woff2");
+      font-weight: 400; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: "Stolzl";
+      src: url("https://www.jandersonmelo.com.br/fonts/Stolzl-Regular-500.woff2") format("woff2");
+      font-weight: 500; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: "Stolzl";
+      src: url("https://www.jandersonmelo.com.br/fonts/Stolzl-Medium-600.woff2") format("woff2");
+      font-weight: 600; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: "Stolzl";
+      src: url("https://www.jandersonmelo.com.br/fonts/Stolzl-Bold-700.woff2") format("woff2");
+      font-weight: 700; font-style: normal; font-display: swap;
+    }
+
+    :root {
+      --ink: #0f172a;
+      --muted: #526174;
+      --line: #e3e8ee;
+      --soft: #f6f8fa;
+      --green: #10b981;
+      --green-dark: #059669;
+      --green-pale: #effaf6;
+      --white: #fff;
+      --danger: #b42318;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--white);
+      font-family: "Stolzl", Arial, sans-serif;
+      font-size: 18px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, p { margin: 0; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1160px, calc(100% - 48px)); margin: 0 auto; }
+
+    .hero {
+      padding: 66px 0 74px;
+      background: linear-gradient(135deg, #f8fafc 0%, var(--green-pale) 100%);
+      text-align: center;
+    }
+    h1 { max-width: 860px; margin: 0 auto; font-size: clamp(42px, 5.5vw, 68px); font-weight: 700; letter-spacing: -.055em; line-height: .98; }
+    h1 strong, .section-heading strong { color: var(--green-dark); font-weight: inherit; }
+    .hero-copy { max-width: 660px; margin: 19px auto 0; color: var(--muted); font-size: 19px; }
+    .formula-card {
+      max-width: 760px; margin: 28px auto 0; padding: 23px 26px; border: 1px solid #d7eee4; border-radius: 18px; background: var(--white);
+    }
+    .formula-card small { display: block; margin-bottom: 7px; color: var(--green-dark); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    .formula-card p { color: var(--muted); font-size: 15px; line-height: 1.45; }
+    .formula-card code { display: block; margin-top: 13px; padding: 12px 14px; overflow-wrap: anywhere; border-radius: 10px; background: var(--soft); color: var(--ink); font-family: inherit; font-size: 14px; font-weight: 600; }
+
+    .calculator-section { padding: 44px 0 76px; }
+    .section-heading { max-width: 700px; margin-bottom: 36px; }
+    .section-heading h2, .advisor-copy h2 { font-size: clamp(32px, 3.5vw, 48px); font-weight: 700; letter-spacing: -.045em; line-height: 1.05; }
+    .section-heading p { margin-top: 15px; color: var(--muted); }
+    .calculator {
+      display: grid; grid-template-columns: minmax(280px, .78fr) minmax(0, 1.22fr); gap: 26px;
+      padding: 28px; border: 1px solid #047857; border-radius: 24px;
+      background: linear-gradient(135deg, #064e3b 0%, #059669 54%, #0f766e 100%);
+      box-shadow: 0 26px 60px rgba(5, 150, 105, .28), 0 16px 34px rgba(15, 23, 42, .10);
+    }
+    .form-card, .result-card { padding: 28px; border: 1px solid rgba(255,255,255,.6); border-radius: 18px; background: var(--white); }
+    .result-card { background: linear-gradient(145deg, #ffffff 0%, #f1fcf6 100%); }
+    .form-card h3, .result-card h3 { font-size: 22px; letter-spacing: -.03em; }
+    .field { display: grid; gap: 8px; margin-top: 22px; }
+    label { font-size: 15px; font-weight: 600; }
+    .field small { color: var(--muted); font-size: 13px; line-height: 1.35; }
+    input, select {
+      width: 100%; padding: 14px 15px; border: 1px solid #cbd5e1; border-radius: 10px; outline: none;
+      color: var(--ink); background: #fff; font: inherit; font-size: 16px; transition: border-color .2s, box-shadow .2s;
+    }
+    input:focus, select:focus { border-color: var(--green); box-shadow: 0 0 0 4px rgba(16,185,129,.12); }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; padding: 13px 20px;
+      border: 0; border-radius: 10px; cursor: pointer; background: var(--green); color: var(--white);
+      font: inherit; font-size: 16px; font-weight: 600; transition: transform .2s, background .2s, box-shadow .2s;
+    }
+    .button:hover { transform: translateY(-2px); background: var(--green-dark); box-shadow: 0 9px 18px rgba(5,150,105,.22); }
+    .form-card .button { width: 100%; margin-top: 26px; }
+    .tool-note { margin-top: 17px; color: var(--muted); font-size: 13px; line-height: 1.45; }
+    .error { min-height: 22px; margin-top: 13px; color: var(--danger); font-size: 14px; font-weight: 500; }
+
+    .result-card { min-height: 390px; }
+    .result-empty { display: grid; min-height: 330px; place-content: center; color: var(--muted); text-align: center; }
+    .result-empty span { display: block; margin-bottom: 12px; color: var(--green-dark); font-size: 32px; }
+    .result-content[hidden], .result-empty[hidden] { display: none; }
+    .result-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; padding-bottom: 23px; border-bottom: 1px solid var(--line); }
+    .result-label { color: var(--muted); font-size: 14px; font-weight: 600; }
+    .rate { margin-top: 3px; color: var(--green-dark); font-size: clamp(36px, 5vw, 50px); font-weight: 700; letter-spacing: -.055em; line-height: 1; }
+    .tax-total { flex: 0 0 auto; padding: 11px 14px; border-radius: 12px; background: var(--green-pale); text-align: right; }
+    .tax-total span { display: block; color: var(--muted); font-size: 12px; font-weight: 600; text-transform: uppercase; }
+    .tax-total strong { display: block; margin-top: 3px; color: var(--ink); font-size: 20px; letter-spacing: -.03em; }
+    .result-meta { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0; }
+    .tag { padding: 5px 9px; border-radius: 100px; background: var(--soft); color: var(--muted); font-size: 12px; font-weight: 600; }
+    .segregation-title { margin: 20px 0 10px; font-size: 16px; }
+    .segregation { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .segregation th { padding: 9px 7px; color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: .04em; text-align: right; text-transform: uppercase; }
+    .segregation th:first-child, .segregation td:first-child { padding-left: 0; text-align: left; }
+    .segregation td { padding: 10px 7px; border-top: 1px solid var(--line); text-align: right; white-space: nowrap; }
+    .segregation td:first-child { font-weight: 600; }
+
+    .notice { padding: 19px 22px; border: 1px solid #f2d7a4; border-radius: 14px; background: #fffaf0; color: #6b4b13; font-size: 14px; }
+    .notice strong { color: #5d3b06; }
+    .article-section { padding: 18px 0 90px; background: var(--soft); }
+    .article-intro { padding: 76px 0 18px; }
+    .annex-grid { display: grid; gap: 26px; }
+    .annex-card { overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: var(--white); }
+    .annex-header { display: flex; justify-content: space-between; gap: 20px; padding: 25px 27px; border-bottom: 1px solid var(--line); }
+    .annex-header h3 { font-size: 25px; letter-spacing: -.04em; }
+    .annex-header p { max-width: 700px; margin-top: 6px; color: var(--muted); font-size: 15px; }
+    .annex-badge { align-self: start; padding: 5px 10px; border-radius: 100px; background: var(--green-pale); color: var(--green-dark); font-size: 12px; font-weight: 700; white-space: nowrap; }
+    .table-wrap { overflow-x: auto; }
+    .annex-table { width: 100%; min-width: 920px; border-collapse: collapse; font-size: 14px; }
+    .annex-table th { padding: 13px 18px; background: #fbfcfd; color: var(--muted); font-size: 11px; letter-spacing: .035em; text-align: left; text-transform: uppercase; }
+    .annex-table td { padding: 14px 18px; border-top: 1px solid var(--line); vertical-align: top; }
+    .annex-table td:nth-child(3), .annex-table td:nth-child(4) { text-align: right; white-space: nowrap; }
+    .annex-table td:last-child { min-width: 390px; color: var(--muted); font-size: 13px; }
+    .article-note { padding: 16px 27px 22px; color: var(--muted); font-size: 13px; }
+    .source-note { margin-top: 18px; color: var(--muted); font-size: 14px; }
+    .source-note a { color: var(--green-dark); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+    .faq { padding: 82px 0; background: var(--white); }
+    .faq-grid { display: grid; grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr); gap: 50px; align-items: start; }
+    .faq-list { display: grid; gap: 12px; }
+    .faq-list details { border: 1px solid var(--line); border-radius: 14px; background: var(--white); }
+    .faq-list summary { position: relative; padding: 19px 52px 19px 20px; cursor: pointer; font-size: 16px; font-weight: 600; list-style: none; }
+    .faq-list summary::-webkit-details-marker { display: none; }
+    .faq-list summary::after { position: absolute; top: 50%; right: 20px; color: var(--green-dark); content: "+"; font-size: 25px; font-weight: 400; transform: translateY(-53%); }
+    .faq-list details[open] summary::after { content: "−"; }
+    .faq-answer { padding: 0 20px 20px; color: var(--muted); font-size: 15px; line-height: 1.55; }
+
+    .main-hero-footer { overflow: hidden; padding: 86px 0 70px; background: linear-gradient(135deg, #f8fafc 0%, var(--green-pale) 100%); }
+    .footer-hero-grid { display: grid; grid-template-columns: minmax(0, .92fr) minmax(360px, 1.08fr); gap: 52px; align-items: center; }
+    .footer-hero-copy h2 { max-width: 650px; font-size: clamp(38px, 4.8vw, 64px); font-weight: 700; letter-spacing: -.055em; line-height: .98; }
+    .footer-hero-copy h2 strong { color: var(--green-dark); font-weight: inherit; }
+    .footer-hero-copy .button { margin-top: 32px; }
+    .footer-hero-visual { position: relative; display: flex; min-height: 470px; align-items: end; justify-content: center; isolation: isolate; }
+    .footer-hero-visual::before { position: absolute; z-index: -1; bottom: 6%; width: 86%; height: 20%; border-radius: 50%; background: rgba(16,185,129,.18); content: ""; filter: blur(30px); }
+    .footer-hero-visual::after { position: absolute; z-index: 1; right: 0; bottom: -1px; left: 0; height: 22%; background: linear-gradient(to bottom, rgba(239,250,246,0), #effaf6 85%); content: ""; pointer-events: none; }
+    .footer-mockup { position: relative; z-index: 0; display: block; width: min(100%, 620px); height: auto; margin: 0 auto; }
+    .footer-credential { position: absolute; z-index: 2; right: 4%; bottom: 12%; padding: 14px 18px; border: 1px solid rgba(255,255,255,.3); border-radius: 14px; background: var(--green-dark); color: var(--white); box-shadow: 0 14px 28px rgba(5,150,105,.28); line-height: 1.2; }
+    .footer-credential strong { display: block; font-size: 17px; letter-spacing: -.02em; }
+    .footer-credential span { display: block; margin-top: 4px; color: #d1fae5; font-size: 13px; font-weight: 600; }
+    .footer-review { position: absolute; z-index: 2; bottom: 8%; left: -4%; width: min(190px, 42%); margin: 0; padding: 10px 12px; border: 1px solid rgba(15,23,42,.08); border-radius: 12px; background: var(--white); box-shadow: 0 8px 18px rgba(15,23,42,.10); }
+    .footer-review .stars { display: block; color: #f59e0b; font-size: 22px; letter-spacing: 1px; }
+    .footer-review p { margin-top: 5px; color: #334155; font-size: 12px; line-height: 1.35; }
+    .footer-review cite { display: block; margin-top: 6px; color: var(--ink); font-size: 11px; font-style: normal; font-weight: 700; letter-spacing: .075em; text-transform: uppercase; }
+    footer { padding: 28px 0; background: var(--white); border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+    footer .container { display: flex; justify-content: space-between; gap: 16px; }
+
+    @media (max-width: 850px) {
+      .calculator, .footer-hero-grid { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; gap: 28px; }
+      .hero { padding: 54px 0 62px; }
+      .footer-hero-grid { gap: 12px; text-align: center; }
+      .footer-hero-copy h2 { margin: 0 auto; }
+      .footer-hero-visual { min-height: auto; margin-top: 18px; }
+      .footer-mockup { width: min(100%, 520px); }
+      .footer-credential { right: 4%; bottom: 10%; padding: 12px 15px; text-align: left; }
+      .footer-credential strong { font-size: 15px; }
+      .footer-credential span { font-size: 12px; }
+      .footer-review { bottom: 7%; left: 1%; width: min(180px, 48%); padding: 9px 10px; text-align: left; }
+      .footer-review p { font-size: 11px; }
+      .footer-review cite { margin-top: 5px; font-size: 10px; }
+    }
+    @media (max-width: 580px) {
+      body { font-size: 16px; }
+      .container { width: min(100% - 32px, 1160px); }
+      .hero, .calculator-section, .main-hero-footer { padding: 50px 0; }
+      .calculator { padding: 12px; gap: 12px; }
+      .form-card, .result-card { padding: 22px 18px; }
+      .result-top { display: block; }
+      .tax-total { display: inline-block; margin-top: 18px; text-align: left; }
+      .annex-header { display: block; padding: 21px 19px; }
+      .annex-badge { display: inline-block; margin-top: 12px; }
+      .article-note { padding: 15px 19px 20px; }
+      footer .container { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Descubra a alíquota do seu <strong>Simples Nacional.</strong></h1>
+        <p class="hero-copy">Calcule o DAS estimado e a distribuição dos tributos em poucos segundos.</p>
+      </div>
+    </section>
+
+    <section class="calculator-section" id="calculadora">
+      <div class="container">
+        <div class="calculator">
+          <form class="form-card" id="tax-form" novalidate>
+            <h3>Dados para o cálculo</h3>
+            <div class="field">
+              <label for="rbt12">RBT12 — Receita Bruta dos últimos 12 meses</label>
+              <input id="rbt12" name="rbt12" inputmode="decimal" autocomplete="off" placeholder="Ex.: 250.000,00" aria-describedby="rbt12-help">
+              <small id="rbt12-help">Use a soma do faturamento dos 12 meses anteriores ao período de apuração.</small>
+            </div>
+            <div class="field">
+              <label for="annex">Anexo do Simples Nacional</label>
+              <select id="annex" name="annex">
+                <option value="I">Anexo I — Comércio</option>
+                <option value="II">Anexo II — Indústria</option>
+                <option value="III">Anexo III — Serviços</option>
+                <option value="IV">Anexo IV — Serviços</option>
+                <option value="V">Anexo V — Serviços</option>
+              </select>
+              <small>Para Anexos III e V, confirme antes se o fator R se aplica à sua atividade.</small>
+            </div>
+            <div class="field">
+              <label for="revenue">Receita tributável do mês</label>
+              <input id="revenue" name="revenue" inputmode="decimal" autocomplete="off" placeholder="Ex.: 20.000,00">
+              <small>Valor sobre o qual a alíquota efetiva será aplicada nesta simulação.</small>
+            </div>
+            <button class="button" type="submit">Calcular imposto</button>
+            <p class="error" id="form-error" role="alert"></p>
+            <p class="tool-note">Não contempla receitas com tratamento específico, sublimites estaduais/municipais, retenções, exportações, início de atividade ou outras particularidades da sua empresa.</p>
+          </form>
+
+          <section class="result-card" aria-live="polite" aria-atomic="true">
+            <div class="result-empty" id="result-empty">
+              <span>↗</span>
+              <p>Preencha os dados ao lado para visualizar a estimativa do seu imposto.</p>
+            </div>
+            <div class="result-content" id="result-content" hidden>
+              <div class="result-top">
+                <div>
+                  <p class="result-label">Alíquota efetiva</p>
+                  <p class="rate" id="effective-rate">0,00%</p>
+                </div>
+                <div class="tax-total">
+                  <span>Imposto estimado</span>
+                  <strong id="tax-value">R$ 0,00</strong>
+                </div>
+              </div>
+              <div class="result-meta">
+                <span class="tag" id="range-tag"></span>
+                <span class="tag" id="nominal-tag"></span>
+                <span class="tag" id="deduction-tag"></span>
+              </div>
+              <h3 class="segregation-title">Segregação estimada do DAS</h3>
+              <table class="segregation">
+                <thead>
+                  <tr><th>Tributo</th><th>Partilha</th><th>Alíquota</th><th>Valor</th></tr>
+                </thead>
+                <tbody id="segregation-body"></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+        <aside class="formula-card" aria-label="Como funciona o cálculo">
+          <small>Como calculamos</small>
+          <p>A alíquota efetiva considera o RBT12, a alíquota nominal e a parcela a deduzir da faixa aplicável.</p>
+          <code>[(RBT12 × alíquota nominal) − parcela a deduzir] ÷ RBT12</code>
+        </aside>
+      </div>
+    </section>
+
+    <section class="article-section" id="anexos">
+      <div class="container">
+        <div class="article-intro">
+          <div class="section-heading">
+            <h2>Entenda os cinco anexos do <strong>Simples Nacional.</strong></h2>
+            <p>Cada tabela abaixo mostra as faixas de RBT12, alíquota nominal, parcela a deduzir e a repartição do DAS por tributo.</p>
+          </div>
+          <p class="notice"><strong>Atenção:</strong> as tabelas desta página reproduzem as regras vigentes até 31 de dezembro de 2026. A classificação da atividade e condições específicas da empresa devem ser avaliadas por um contador.</p>
+          <p class="source-note">Fonte normativa: <a href="https://www8.receita.fazenda.gov.br/SimplesNacional/Arquivos/manual/PerguntaoSN.pdf" target="_blank" rel="noopener noreferrer">Perguntas e Respostas do Simples Nacional — Receita Federal</a>. Conteúdo atualizado em <time datetime="2026-11-13">13 de novembro de 2026</time>.</p>
+        </div>
+        <div class="annex-grid" id="annex-tables"></div>
+      </div>
+    </section>
+
+    <section class="faq" id="perguntas-frequentes">
+      <div class="container faq-grid">
+        <div class="section-heading">
+          <h2>Perguntas frequentes sobre o <strong>Simples Nacional.</strong></h2>
+          <p>Use a calculadora para uma estimativa inicial e confira os pontos que mais geram dúvidas na apuração.</p>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>O que é RBT12?</summary>
+            <div class="faq-answer">RBT12 é a Receita Bruta Total acumulada nos 12 meses anteriores ao período de apuração. Ela define a faixa, a alíquota nominal e a parcela a deduzir usadas no cálculo.</div>
+          </details>
+          <details>
+            <summary>Como é calculada a alíquota efetiva do Simples Nacional?</summary>
+            <div class="faq-answer">A fórmula é: [(RBT12 × alíquota nominal) − parcela a deduzir] ÷ RBT12. A alíquota efetiva encontrada é aplicada sobre a receita tributável do mês.</div>
+          </details>
+          <details>
+            <summary>Qual anexo do Simples Nacional devo escolher?</summary>
+            <div class="faq-answer">O anexo depende da atividade exercida e, para algumas atividades de serviços, da apuração do fator R. Confirme a classificação da atividade e a regra aplicável com um contador.</div>
+          </details>
+          <details>
+            <summary>O Anexo IV inclui a CPP no DAS?</summary>
+            <div class="faq-answer">Não. Nas atividades tributadas pelo Anexo IV, a contribuição patronal previdenciária não está incluída no DAS e deve ser recolhida conforme as regras aplicáveis.</div>
+          </details>
+          <details>
+            <summary>O resultado da calculadora é o valor definitivo do imposto?</summary>
+            <div class="faq-answer">Não. A ferramenta oferece uma estimativa para a apuração regular. Situações como retenções, receitas com tratamento específico, sublimites e início de atividade podem alterar o cálculo.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="main-hero-footer">
+      <div class="container">
+        <div class="footer-hero-grid">
+          <div class="footer-hero-copy">
+            <h2>Contabilidade para ME e EPP e <strong>o contador não some.</strong></h2>
+            <a class="button" href="https://www.jandersonmelo.com.br/">Falar agora <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="footer-hero-visual">
+            <img class="footer-mockup" src="https://www.jandersonmelo.com.br/imgs/mockup-principal.webp" alt="Exemplo de relatório contábil enviado para a empresa">
+            <div class="footer-credential" aria-label="Janderson Melo, CRC PA 023305">
+              <strong>Janderson Melo</strong>
+              <span>CRC/PA 023305</span>
+            </div>
+            <figure class="footer-review" aria-label="Avaliação de Vicente Dias no Google">
+              <span class="stars" aria-label="5 de 5 estrelas">★★★★★</span>
+              <p>“Sem dúvidas o melhor. Sempre atencioso com seus clientes, nas explicações e direções a serem tomadas.”</p>
+              <cite>Vicente Dias</cite>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <p>© Janderson Melo | Contador</p>
+      <p>CRC/PA 023305</p>
+    </div>
+  </footer>
+
+  <script>
+    const limits = [
+      { label: "1ª faixa", range: "Até R$ 180.000,00", max: 180000 },
+      { label: "2ª faixa", range: "De R$ 180.000,01 a R$ 360.000,00", max: 360000 },
+      { label: "3ª faixa", range: "De R$ 360.000,01 a R$ 720.000,00", max: 720000 },
+      { label: "4ª faixa", range: "De R$ 720.000,01 a R$ 1.800.000,00", max: 1800000 },
+      { label: "5ª faixa", range: "De R$ 1.800.000,01 a R$ 3.600.000,00", max: 3600000 },
+      { label: "6ª faixa", range: "De R$ 3.600.000,01 a R$ 4.800.000,00", max: 4800000 }
+    ];
+
+    const shares = (items) => items.map(([name, share]) => ({ name, share }));
+    const annexes = {
+      I: {
+        title: "Anexo I", area: "Comércio",
+        description: "Receitas de revenda de mercadorias. Inclui IRPJ, CSLL, Cofins, PIS/Pasep, CPP e ICMS no DAS.",
+        rates: [[.04,0],[.073,5940],[.095,13860],[.107,22500],[.143,87300],[.19,378000]],
+        allocations: [
+          shares([["IRPJ",5.5],["CSLL",3.5],["Cofins",12.74],["PIS/Pasep",2.76],["CPP",41.5],["ICMS",34]]),
+          shares([["IRPJ",5.5],["CSLL",3.5],["Cofins",12.74],["PIS/Pasep",2.76],["CPP",41.5],["ICMS",34]]),
+          shares([["IRPJ",5.5],["CSLL",3.5],["Cofins",12.74],["PIS/Pasep",2.76],["CPP",42],["ICMS",33.5]]),
+          shares([["IRPJ",5.5],["CSLL",3.5],["Cofins",12.74],["PIS/Pasep",2.76],["CPP",42],["ICMS",33.5]]),
+          shares([["IRPJ",5.5],["CSLL",3.5],["Cofins",12.74],["PIS/Pasep",2.76],["CPP",42],["ICMS",33.5]]),
+          shares([["IRPJ",13.5],["CSLL",10],["Cofins",28.27],["PIS/Pasep",6.13],["CPP",42.1]])
+        ]
+      },
+      II: {
+        title: "Anexo II", area: "Indústria",
+        description: "Receitas de atividade industrial. Inclui IRPJ, CSLL, Cofins, PIS/Pasep, CPP, IPI e ICMS no DAS.",
+        rates: [[.045,0],[.078,5940],[.10,13860],[.112,22500],[.147,85500],[.30,720000]],
+        allocations: [
+          shares([["IRPJ",5.5],["CSLL",3.5],["Cofins",11.51],["PIS/Pasep",2.49],["CPP",37.5],["IPI",7.5],["ICMS",32]]),
+          shares([["IRPJ",5.5],["CSLL",3.5],["Cofins",11.51],["PIS/Pasep",2.49],["CPP",37.5],["IPI",7.5],["ICMS",32]]),
+          shares([["IRPJ",5.5],["CSLL",3.5],["Cofins",11.51],["PIS/Pasep",2.49],["CPP",37.5],["IPI",7.5],["ICMS",32]]),
+          shares([["IRPJ",5.5],["CSLL",3.5],["Cofins",11.51],["PIS/Pasep",2.49],["CPP",37.5],["IPI",7.5],["ICMS",32]]),
+          shares([["IRPJ",5.5],["CSLL",3.5],["Cofins",11.51],["PIS/Pasep",2.49],["CPP",37.5],["IPI",7.5],["ICMS",32]]),
+          shares([["IRPJ",8.5],["CSLL",7.5],["Cofins",20.96],["PIS/Pasep",4.54],["CPP",23.5],["IPI",35]])
+        ]
+      },
+      III: {
+        title: "Anexo III", area: "Serviços",
+        description: "Serviços previstos na legislação e atividades sujeitas ao fator R igual ou superior a 28%.",
+        rates: [[.06,0],[.112,9360],[.135,17640],[.16,35640],[.21,125640],[.33,648000]],
+        allocations: [
+          shares([["IRPJ",4],["CSLL",3.5],["Cofins",12.82],["PIS/Pasep",2.78],["CPP",43.4],["ISS",33.5]]),
+          shares([["IRPJ",4],["CSLL",3.5],["Cofins",14.05],["PIS/Pasep",3.05],["CPP",43.4],["ISS",32]]),
+          shares([["IRPJ",4],["CSLL",3.5],["Cofins",13.64],["PIS/Pasep",2.96],["CPP",43.4],["ISS",32.5]]),
+          shares([["IRPJ",4],["CSLL",3.5],["Cofins",13.64],["PIS/Pasep",2.96],["CPP",43.4],["ISS",32.5]]),
+          shares([["IRPJ",4],["CSLL",3.5],["Cofins",12.82],["PIS/Pasep",2.78],["CPP",43.4],["ISS",33.5]]),
+          shares([["IRPJ",35],["CSLL",15],["Cofins",16.03],["PIS/Pasep",3.47],["CPP",30.5]])
+        ]
+      },
+      IV: {
+        title: "Anexo IV", area: "Serviços",
+        description: "Serviços previstos no art. 18, § 5º-C. A CPP patronal não está incluída no DAS deste anexo.",
+        rates: [[.045,0],[.09,8100],[.102,12420],[.14,39780],[.22,183780],[.33,828000]],
+        allocations: [
+          shares([["IRPJ",18.8],["CSLL",15.2],["Cofins",17.67],["PIS/Pasep",3.83],["ISS",44.5]]),
+          shares([["IRPJ",19.8],["CSLL",15.2],["Cofins",20.55],["PIS/Pasep",4.45],["ISS",40]]),
+          shares([["IRPJ",20.8],["CSLL",15.2],["Cofins",19.73],["PIS/Pasep",4.27],["ISS",40]]),
+          shares([["IRPJ",17.8],["CSLL",19.2],["Cofins",18.9],["PIS/Pasep",4.1],["ISS",40]]),
+          shares([["IRPJ",18.8],["CSLL",19.2],["Cofins",18.08],["PIS/Pasep",3.92],["ISS",40]]),
+          shares([["IRPJ",53.5],["CSLL",21.5],["Cofins",20.55],["PIS/Pasep",4.45]])
+        ]
+      },
+      V: {
+        title: "Anexo V", area: "Serviços",
+        description: "Serviços previstos na legislação quando o fator R for inferior a 28%.",
+        rates: [[.155,0],[.18,4500],[.195,9900],[.205,17100],[.23,62100],[.305,540000]],
+        allocations: [
+          shares([["IRPJ",25],["CSLL",15],["Cofins",14.1],["PIS/Pasep",3.05],["CPP",28.85],["ISS",14]]),
+          shares([["IRPJ",23],["CSLL",15],["Cofins",14.1],["PIS/Pasep",3.05],["CPP",27.85],["ISS",17]]),
+          shares([["IRPJ",24],["CSLL",15],["Cofins",14.92],["PIS/Pasep",3.23],["CPP",23.85],["ISS",19]]),
+          shares([["IRPJ",21],["CSLL",15],["Cofins",15.74],["PIS/Pasep",3.41],["CPP",23.85],["ISS",21]]),
+          shares([["IRPJ",23],["CSLL",12.5],["Cofins",14.1],["PIS/Pasep",3.05],["CPP",23.85],["ISS",23.5]]),
+          shares([["IRPJ",35],["CSLL",15.5],["Cofins",16.44],["PIS/Pasep",3.56],["CPP",29.5]])
+        ]
+      }
+    };
+
+    const currency = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
+    const percent = (value) => new Intl.NumberFormat("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(value * 100) + "%";
+    const sharePercent = (value) => new Intl.NumberFormat("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(value) + "%";
+
+    function parseBrazilianNumber(value) {
+      const cleaned = value.trim().replace(/[R$\s]/g, "");
+      if (!cleaned) return NaN;
+      if (cleaned.includes(",") && cleaned.includes(".")) return Number(cleaned.replace(/\./g, "").replace(",", "."));
+      if (cleaned.includes(",")) return Number(cleaned.replace(",", "."));
+      return Number(cleaned);
+    }
+
+    function distributionFor(allocation, effectiveRate) {
+      const base = allocation.map((tax) => ({ ...tax, effective: effectiveRate * tax.share / 100 }));
+      const iss = base.find((tax) => tax.name === "ISS");
+      if (iss && iss.effective > .05) {
+        const excess = iss.effective - .05;
+        iss.effective = .05;
+        const federal = base.filter((tax) => tax.name !== "ISS");
+        const federalShares = federal.reduce((sum, tax) => sum + tax.share, 0);
+        federal.forEach((tax) => { tax.effective += excess * tax.share / federalShares; });
+      }
+      return base;
+    }
+
+    function getRangeIndex(rbt12) {
+      return limits.findIndex((limit) => rbt12 <= limit.max);
+    }
+
+    function renderResult(event) {
+      if (event) event.preventDefault();
+      const rbt12 = parseBrazilianNumber(document.getElementById("rbt12").value);
+      const revenue = parseBrazilianNumber(document.getElementById("revenue").value);
+      const key = document.getElementById("annex").value;
+      const error = document.getElementById("form-error");
+      error.textContent = "";
+
+      if (!Number.isFinite(rbt12) || !Number.isFinite(revenue) || rbt12 <= 0 || revenue < 0) {
+        error.textContent = "Informe valores numéricos válidos e maiores que zero.";
+        return;
+      }
+      if (rbt12 > 4800000) {
+        error.textContent = "Esta calculadora cobre RBT12 de até R$ 4.800.000,00.";
+        return;
+      }
+
+      const annex = annexes[key];
+      const rangeIndex = getRangeIndex(rbt12);
+      const [nominal, deduction] = annex.rates[rangeIndex];
+      const effectiveRate = ((rbt12 * nominal) - deduction) / rbt12;
+      const totalTax = revenue * effectiveRate;
+      const taxes = distributionFor(annex.allocations[rangeIndex], effectiveRate);
+
+      document.getElementById("result-empty").hidden = true;
+      document.getElementById("result-content").hidden = false;
+      document.getElementById("effective-rate").textContent = percent(effectiveRate);
+      document.getElementById("tax-value").textContent = currency.format(totalTax);
+      document.getElementById("range-tag").textContent = annex.title + " · " + limits[rangeIndex].label;
+      document.getElementById("nominal-tag").textContent = "Alíquota nominal: " + percent(nominal);
+      document.getElementById("deduction-tag").textContent = "Dedução: " + currency.format(deduction);
+      document.getElementById("segregation-body").innerHTML = taxes.map((tax) =>
+        "<tr><td>" + tax.name + "</td><td>" + sharePercent(tax.share) + "</td><td>" + percent(tax.effective) + "</td><td>" + currency.format(revenue * tax.effective) + "</td></tr>"
+      ).join("");
+    }
+
+    function renderTables() {
+      const target = document.getElementById("annex-tables");
+      target.innerHTML = Object.values(annexes).map((annex) => {
+        const rows = annex.rates.map((rate, index) => {
+          const distribution = annex.allocations[index].map((tax) => tax.name + " " + sharePercent(tax.share)).join(" · ");
+          return "<tr><td>" + limits[index].label + "</td><td>" + limits[index].range + "</td><td>" + percent(rate[0]) + "</td><td>" + currency.format(rate[1]) + "</td><td>" + distribution + "</td></tr>";
+        }).join("");
+        return "<article class=\"annex-card\"><header class=\"annex-header\"><div><h3>" + annex.title + " — " + annex.area + "</h3><p>" + annex.description + "</p></div><span class=\"annex-badge\">" + annex.area + "</span></header><div class=\"table-wrap\"><table class=\"annex-table\"><thead><tr><th>Faixa</th><th>RBT12</th><th>Alíquota nominal</th><th>Parcela a deduzir</th><th>Segregação dos tributos</th></tr></thead><tbody>" + rows + "</tbody></table></div><p class=\"article-note\">A repartição representa o percentual de cada tributo dentro do DAS da faixa. Nos anexos com ISS, a parcela efetiva do imposto municipal é limitada a 5%, conforme a regra aplicável.</p></article>";
+      }).join("");
+    }
+
+    document.getElementById("tax-form").addEventListener("submit", renderResult);
+    ["rbt12", "revenue"].forEach((id) => {
+      document.getElementById(id).addEventListener("blur", (event) => {
+        const value = parseBrazilianNumber(event.target.value);
+        if (Number.isFinite(value) && value >= 0) event.target.value = new Intl.NumberFormat("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(value);
+      });
+    });
+    renderTables();
+  </script>
+</body>
+</html>

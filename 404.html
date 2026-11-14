@@ -144,6 +144,65 @@
             transform: scale(1.1);
         }
 
+        /* Menu expansível de utilitários */
+        .utilities-menu {
+            width: 100%;
+        }
+
+        .utilities-menu summary {
+            list-style: none;
+            cursor: pointer;
+        }
+
+        .utilities-menu summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .utilities-menu .link-arrow {
+            transition: transform .25s ease;
+        }
+
+        .utilities-menu[open] .link-arrow {
+            transform: rotate(90deg);
+        }
+
+        .utilities-menu__links {
+            display: grid;
+            gap: 10px;
+            padding: 10px 0 2px;
+        }
+
+        .utilities-menu__link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 13px 16px;
+            color: inherit;
+            font-size: .88rem;
+            text-decoration: none;
+            background: rgba(255, 255, 255, .05);
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: 12px;
+            transition: background .25s ease, border-color .25s ease, transform .25s ease;
+        }
+
+        .utilities-menu__link:hover {
+            background: rgba(111, 147, 255, .14);
+            border-color: rgba(169, 191, 255, .45);
+            transform: translateX(3px);
+        }
+
+        .utilities-menu__link i:first-child {
+            width: 18px;
+            color: #a9c2ff;
+            text-align: center;
+        }
+
+        .utilities-menu__link i:last-child {
+            margin-left: auto;
+            font-size: .75rem;
+        }
+
         @media (max-width: 430px) {
             .links-wrapper .accounting-banner {
                 grid-template-columns: minmax(0, 1.18fr) minmax(105px, .82fr);
@@ -236,6 +295,54 @@
                     <img src="https://www.jandersonmelo.com.br/banner.webp" alt="">
                 </span>
             </a>
+
+            <details class="utilities-menu">
+                <summary class="link-item" id="link-utilities">
+                    <div class="link-icon-wrapper">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+                    <span class="link-text">Utilitários e Ferramentas</span>
+                    <i class="fa-solid fa-chevron-right link-arrow"></i>
+                </summary>
+
+                <div class="utilities-menu__links">
+                    <a href="https://www.jandersonmelo.com.br/tools/calculadora-anexos-do-simples" class="utilities-menu__link" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-solid fa-calculator"></i>
+                        <span>Calculadora de Anexos Simples Nacional</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                    <a href="https://www.jandersonmelo.com.br/tools/calculadora-mei-proporcional" class="utilities-menu__link" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-solid fa-calculator"></i>
+                        <span>Calculadora MEI</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                    <a href="https://www.jandersonmelo.com.br/tools/planilha-financeira-mei" class="utilities-menu__link" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-solid fa-table"></i>
+                        <span>Planilha MEI</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                    <a href="https://www.jandersonmelo.com.br/tools/atividades-do-mei" class="utilities-menu__link" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-solid fa-table"></i>
+                        <span>Atividades do MEI</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                    <a href="https://www.jandersonmelo.com.br/tools/manual-completo-do-mei" class="utilities-menu__link" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-solid fa-table"></i>
+                        <span>Manual Completo do MEI</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                    <a href="https://www.jandersonmelo.com.br/tools/calculadora-de-contratacao" class="utilities-menu__link" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-solid fa-table"></i>
+                        <span>Calculadora de Contratação</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                    <a href="https://www.jandersonmelo.com.br/tools/calculadora-de-rescisao" class="utilities-menu__link" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-solid fa-table"></i>
+                        <span>Calculadora de Rescisão</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </details>
 
         </nav>
 
