@@ -282,7 +282,7 @@
       .annex-header { display: block; padding: 21px 19px; }
       .annex-badge { display: inline-block; margin-top: 12px; }
       .article-note { padding: 15px 19px 20px; }
-      footer .container { flex-direction: column; }
+      footer .container { align-items: center; flex-direction: column; text-align: center; }
     }
   </style>
 </head>
@@ -302,7 +302,7 @@
             <h3>Dados para o cálculo</h3>
             <div class="field">
               <label for="rbt12">RBT12 — Receita Bruta dos últimos 12 meses</label>
-              <input id="rbt12" name="rbt12" inputmode="decimal" autocomplete="off" placeholder="Ex.: 250.000,00" aria-describedby="rbt12-help">
+              <input id="rbt12" name="rbt12" inputmode="decimal" autocomplete="off" placeholder="Ex.: R$ 250.000,00" aria-describedby="rbt12-help">
               <small id="rbt12-help">Use a soma do faturamento dos 12 meses anteriores ao período de apuração.</small>
             </div>
             <div class="field">
@@ -318,7 +318,7 @@
             </div>
             <div class="field">
               <label for="revenue">Receita tributável do mês</label>
-              <input id="revenue" name="revenue" inputmode="decimal" autocomplete="off" placeholder="Ex.: 20.000,00">
+              <input id="revenue" name="revenue" inputmode="decimal" autocomplete="off" placeholder="Ex.: R$ 20.000,00">
               <small>Valor sobre o qual a alíquota efetiva será aplicada nesta simulação.</small>
             </div>
             <button class="button" type="submit">Calcular imposto</button>
@@ -531,6 +531,13 @@
       return Number(cleaned);
     }
 
+    function formatBrazilianCurrencyInput(value) {
+      const digits = value.replace(/\D/g, "");
+      if (!digits) return "";
+      const amount = Number(digits) / 100;
+      return currency.format(amount);
+    }
+
     function distributionFor(allocation, effectiveRate) {
       const base = allocation.map((tax) => ({ ...tax, effective: effectiveRate * tax.share / 100 }));
       const iss = base.find((tax) => tax.name === "ISS");
@@ -597,9 +604,10 @@
 
     document.getElementById("tax-form").addEventListener("submit", renderResult);
     ["rbt12", "revenue"].forEach((id) => {
-      document.getElementById(id).addEventListener("blur", (event) => {
-        const value = parseBrazilianNumber(event.target.value);
-        if (Number.isFinite(value) && value >= 0) event.target.value = new Intl.NumberFormat("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(value);
+      const field = document.getElementById(id);
+      field.addEventListener("input", (event) => {
+        event.target.value = formatBrazilianCurrencyInput(event.target.value);
+        event.target.setSelectionRange(event.target.value.length, event.target.value.length);
       });
     });
     renderTables();
