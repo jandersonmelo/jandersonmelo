@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Simule o custo de contratação de um funcionário para ME ou EPP do Simples Nacional. Estime salário, FGTS, férias, 13º e encargos patronais do Anexo IV.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="author" content="Janderson Melo | Contador">
+  <meta name="theme-color" content="#059669">
+  <title>Calculadora de Contratação Simples Nacional | Custo do Funcionário</title>
+  <link rel="canonical" href="https://www.jandersonmelo.com.br/calculadora-de-contratacao">
+  <link rel="icon" type="image/webp" href="https://www.jandersonmelo.com.br/imgs/icon.webp">
+  <link rel="preload" href="https://www.jandersonmelo.com.br/fonts/Stolzl-Regular-500.woff2" as="font" type="font/woff2" crossorigin>
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Janderson Melo | Contador">
+  <meta property="og:title" content="Calculadora de contratação para Simples Nacional">
+  <meta property="og:description" content="Estime o custo mensal de um funcionário com salário, FGTS, férias, 13º e encargos do Anexo IV.">
+  <meta property="og:url" content="https://www.jandersonmelo.com.br/calculadora-de-contratacao">
+  <meta property="og:image" content="https://www.jandersonmelo.com.br/imgs/share.webp">
+  <meta property="og:image:type" content="image/webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Calculadora de contratação para Simples Nacional">
+  <meta name="twitter:description" content="Simule o custo estimado de contratação de um funcionário.">
+  <meta name="twitter:image" content="https://www.jandersonmelo.com.br/imgs/share.webp">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"WebPage",
+        "@id":"https://www.jandersonmelo.com.br/calculadora-de-contratacao#webpage",
+        "url":"https://www.jandersonmelo.com.br/calculadora-de-contratacao",
+        "name":"Calculadora de Contratação Simples Nacional | Custo do Funcionário",
+        "description":"Ferramenta para estimar o custo trabalhista mensal de contratação de um funcionário por ME ou EPP do Simples Nacional.",
+        "inLanguage":"pt-BR",
+        "isPartOf":{"@type":"WebSite","name":"Janderson Melo | Contador","url":"https://www.jandersonmelo.com.br/"},
+        "about":{"@type":"Thing","name":"Custos trabalhistas no Simples Nacional"}
+      },
+      {
+        "@type":"WebApplication",
+        "name":"Calculadora de contratação para Simples Nacional",
+        "applicationCategory":"BusinessApplication",
+        "operatingSystem":"Web",
+        "description":"Simulador de salário, férias, 13º, FGTS e contribuição patronal para empresas do Simples Nacional.",
+        "featureList":"Simulação de custos mensais, presets de ocupações, detalhamento de encargos e resumo para impressão",
+        "offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"}
+      },
+      {
+        "@type":"FAQPage",
+        "mainEntity":[
+          {"@type":"Question","name":"O que entra no custo de contratação no Simples Nacional?","acceptedAnswer":{"@type":"Answer","text":"A estimativa considera salário, provisões de 13º salário e férias acrescidas de um terço, FGTS e o FGTS incidente sobre essas provisões. Para o Anexo IV, a ferramenta adiciona a contribuição patronal previdenciária estimada."}},
+          {"@type":"Question","name":"Empresas do Simples Nacional pagam INSS patronal?","acceptedAnswer":{"@type":"Answer","text":"Em regra, a contribuição patronal previdenciária é recolhida dentro do Simples Nacional, exceto para atividades do Anexo IV, que possuem tratamento próprio. A classificação da atividade deve ser confirmada com orientação profissional."}},
+          {"@type":"Question","name":"A calculadora substitui convenção coletiva?","acceptedAnswer":{"@type":"Answer","text":"Não. Pisos salariais, benefícios, adicionais, jornada e outras condições podem ser definidos por sindicato, convenção ou acordo coletivo e devem ser conferidos antes da contratação."}}
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    @font-face { font-family:"Stolzl"; src:url("https://www.jandersonmelo.com.br/fonts/Stolzl-Book-400.woff2") format("woff2"); font-weight:400; font-style:normal; font-display:swap; }
+    @font-face { font-family:"Stolzl"; src:url("https://www.jandersonmelo.com.br/fonts/Stolzl-Regular-500.woff2") format("woff2"); font-weight:500; font-style:normal; font-display:swap; }
+    @font-face { font-family:"Stolzl"; src:url("https://www.jandersonmelo.com.br/fonts/Stolzl-Medium-600.woff2") format("woff2"); font-weight:600; font-style:normal; font-display:swap; }
+    @font-face { font-family:"Stolzl"; src:url("https://www.jandersonmelo.com.br/fonts/Stolzl-Bold-700.woff2") format("woff2"); font-weight:700; font-style:normal; font-display:swap; }
+    :root { --ink:#0f172a; --muted:#526174; --line:#e3e8ee; --soft:#f6f8fa; --green:#10b981; --green-dark:#059669; --green-deep:#064e3b; --green-pale:#effaf6; --white:#fff; --warm:#f59e0b; --danger:#b42318; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--white); font-family:"Stolzl",Arial,sans-serif; font-size:18px; line-height:1.55; -webkit-font-smoothing:antialiased; }
+    h1,h2,h3,p { margin:0; }
+    button,input,select { font:inherit; }
+    a { color:inherit; text-decoration:none; }
+    .container { width:min(1160px,calc(100% - 48px)); margin:0 auto; }
+    .hero { padding:70px 0 47px; background:linear-gradient(135deg,#f8fafc 0%,var(--green-pale) 100%); text-align:center; }
+    h1 { max-width:940px; margin:0 auto; font-size:clamp(42px,5.5vw,68px); font-weight:700; letter-spacing:-.055em; line-height:.98; }
+    h1 strong,.section-title strong { color:var(--green-dark); font-weight:inherit; }
+    .hero-copy { max-width:760px; margin:19px auto 0; color:var(--muted); font-size:19px; }
+    .calculator-section { padding:10px 0 78px; background:linear-gradient(135deg,#f8fafc 0%,var(--green-pale) 100%); }
+    .calculator { display:grid; grid-template-columns:minmax(295px,.83fr) minmax(0,1.17fr); gap:25px; padding:26px; border:1px solid #047857; border-radius:25px; background:linear-gradient(135deg,var(--green-deep) 0%,var(--green-dark) 52%,#0f766e 100%); box-shadow:0 26px 60px rgba(5,150,105,.28),0 16px 34px rgba(15,23,42,.1); }
+    .form-card,.result-card { padding:28px; border:1px solid rgba(255,255,255,.66); border-radius:18px; background:var(--white); }
+    .form-card h2,.result-card h2 { font-size:24px; letter-spacing:-.035em; line-height:1.1; }
+    .form-card > p { margin-top:7px; color:var(--muted); font-size:14px; }
+    .fields { display:grid; gap:15px; margin-top:23px; }
+    .field { display:grid; gap:7px; }
+    label { font-size:14px; font-weight:600; }
+    label small { color:var(--muted); font-weight:400; }
+    input,select { width:100%; min-height:49px; padding:12px 14px; border:1px solid #cbd5e1; border-radius:10px; outline:none; color:var(--ink); background:#fff; font-size:16px; }
+    input:focus,select:focus { border-color:var(--green); box-shadow:0 0 0 4px rgba(16,185,129,.12); }
+    .field-hint { color:var(--muted); font-size:12px; line-height:1.35; }
+    .switch { display:flex; gap:11px; align-items:flex-start; margin-top:3px; padding:12px; border:1px solid var(--line); border-radius:11px; background:#f8fafc; }
+    .switch input { width:18px; min-height:auto; height:18px; margin:3px 0 0; accent-color:var(--green-dark); }
+    .switch label { font-size:13px; line-height:1.35; }
+    .button { display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:51px; padding:13px 20px; border:0; border-radius:10px; cursor:pointer; color:var(--white); background:var(--green); font-size:16px; font-weight:600; transition:transform .2s,background .2s,box-shadow .2s; }
+    .button:hover { background:var(--green-dark); box-shadow:0 9px 18px rgba(5,150,105,.22); transform:translateY(-2px); }
+    .form-card .button { width:100%; margin-top:24px; }
+    .alert { margin-top:15px; padding:12px 13px; border:1px solid #f8d48d; border-radius:10px; background:#fffbeb; color:#7c4a03; font-size:12px; line-height:1.42; }
+    .alert strong { color:#92400e; }
+    .error { min-height:18px; margin-top:8px; color:var(--danger); font-size:13px; font-weight:500; }
+    .result-card { min-height:530px; background:linear-gradient(145deg,#fff 0%,#f1fcf6 100%); }
+    .result-empty { display:grid; min-height:415px; place-content:center; color:var(--muted); text-align:center; }
+    .result-empty span { display:block; margin-bottom:10px; color:var(--green-dark); font-size:33px; }
+    .result-empty[hidden],.result-content[hidden] { display:none; }
+    .result-context { margin-top:6px; color:var(--muted); font-size:14px; }
+    .cost-value { margin-top:20px; color:var(--green-dark); font-size:clamp(39px,5vw,57px); font-weight:700; letter-spacing:-.06em; line-height:1; }
+    .cost-label { margin-top:5px; color:var(--muted); font-size:14px; }
+    .percentage { display:inline-flex; margin-top:14px; padding:6px 10px; border-radius:99px; background:#dff8ec; color:#06734f; font-size:13px; font-weight:700; }
+    .cost-breakdown { display:grid; gap:0; margin-top:24px; border:1px solid var(--line); border-radius:13px; overflow:hidden; background:var(--white); }
+    .cost-row { display:flex; justify-content:space-between; gap:14px; padding:11px 13px; border-bottom:1px solid var(--line); font-size:14px; }
+    .cost-row:last-child { border-bottom:0; }
+    .cost-row span { color:var(--muted); }
+    .cost-row strong { color:var(--ink); white-space:nowrap; }
+    .cost-row.total { background:var(--green-pale); font-weight:700; }
+    .cost-row.total span,.cost-row.total strong { color:var(--green-deep); }
+    .result-note { margin-top:16px; color:var(--muted); font-size:12px; line-height:1.4; }
+    .print-section { padding:0 0 78px; background:var(--white); }
+    .print-sheet { max-width:900px; margin:0 auto; padding:29px; border:1px solid var(--line); border-radius:18px; background:var(--white); box-shadow:0 14px 30px rgba(15,23,42,.06); }
+    .print-sheet[hidden] { display:none; }
+    .print-heading { display:flex; justify-content:space-between; gap:22px; align-items:flex-start; }
+    .print-heading h2 { font-size:27px; letter-spacing:-.04em; line-height:1.1; }
+    .print-heading p { margin-top:5px; color:var(--muted); font-size:14px; }
+    .print-button { flex:none; background:var(--ink); }
+    .print-button:hover { background:#1e293b; }
+    .print-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:25px; }
+    .print-item { padding:13px; border:1px solid var(--line); border-radius:11px; background:var(--soft); }
+    .print-item span { display:block; color:var(--muted); font-size:11px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; }
+    .print-item strong { display:block; margin-top:5px; font-size:16px; letter-spacing:-.02em; }
+    .print-alert { margin-top:20px; padding:13px 14px; border-left:4px solid var(--warm); border-radius:6px; background:#fffbeb; color:#7c4a03; font-size:13px; line-height:1.45; }
+    .article-section { padding:82px 0; background:var(--soft); }
+    .article-grid { display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:64px; align-items:start; }
+    .eyebrow { margin-bottom:10px; color:var(--green-dark); font-size:13px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; }
+    .section-title { font-size:clamp(32px,4vw,48px); font-weight:700; letter-spacing:-.052em; line-height:1.04; }
+    .article-copy p:not(.eyebrow) { margin-top:18px; color:var(--muted); }
+    .assumptions { display:grid; gap:13px; }
+    .assumption { padding:19px 20px; border:1px solid var(--line); border-radius:14px; background:var(--white); }
+    .assumption h3 { font-size:18px; letter-spacing:-.025em; }
+    .assumption p { margin-top:5px; color:var(--muted); font-size:14px; }
+    .source-note { margin-top:25px; padding-top:18px; border-top:1px solid var(--line); color:var(--muted); font-size:13px; }
+    .source-note a { color:var(--green-dark); font-weight:600; text-decoration:underline; text-underline-offset:3px; }
+    .faq-section { padding:76px 0; }
+    .faq { max-width:880px; margin:0 auto; }
+    .faq h2 { text-align:center; font-size:clamp(30px,4vw,44px); letter-spacing:-.05em; line-height:1.04; }
+    details { margin-top:14px; padding:0 21px; border:1px solid var(--line); border-radius:13px; background:var(--white); }
+    summary { position:relative; padding:18px 26px 18px 0; cursor:pointer; font-size:17px; font-weight:600; list-style:none; }
+    summary::-webkit-details-marker { display:none; }
+    summary::after { position:absolute; top:17px; right:0; color:var(--green-dark); content:"+"; font-size:24px; font-weight:400; }
+    details[open] summary::after { content:"−"; }
+    details p { padding:0 0 19px; color:var(--muted); font-size:16px; }
+    .main-hero-footer { overflow:hidden; padding:86px 0 70px; background:linear-gradient(135deg,#f8fafc 0%,var(--green-pale) 100%); }
+    .footer-hero-grid { display:grid; grid-template-columns:minmax(0,.92fr) minmax(360px,1.08fr); gap:52px; align-items:center; }
+    .footer-hero-copy h2 { max-width:650px; font-size:clamp(38px,4.8vw,64px); font-weight:700; letter-spacing:-.055em; line-height:.98; }
+    .footer-hero-copy h2 strong { color:var(--green-dark); font-weight:inherit; }
+    .footer-hero-copy .button { margin-top:32px; }
+    .footer-hero-visual { position:relative; display:flex; min-height:470px; align-items:end; justify-content:center; isolation:isolate; }
+    .footer-hero-visual::before { position:absolute; z-index:-1; bottom:6%; width:86%; height:20%; border-radius:50%; background:rgba(16,185,129,.18); content:""; filter:blur(30px); }
+    .footer-hero-visual::after { position:absolute; z-index:1; right:0; bottom:-1px; left:0; height:22%; background:linear-gradient(to bottom,rgba(239,250,246,0),#effaf6 85%); content:""; pointer-events:none; }
+    .footer-mockup { position:relative; z-index:0; display:block; width:min(100%,620px); height:auto; margin:0 auto; }
+    .footer-credential { position:absolute; z-index:2; right:4%; bottom:12%; padding:14px 18px; border:1px solid rgba(255,255,255,.3); border-radius:14px; background:var(--green-dark); color:var(--white); box-shadow:0 14px 28px rgba(5,150,105,.28); line-height:1.2; }
+    .footer-credential strong { display:block; font-size:17px; letter-spacing:-.02em; }
+    .footer-credential span { display:block; margin-top:4px; color:#d1fae5; font-size:13px; font-weight:600; }
+    .footer-review { position:absolute; z-index:2; bottom:8%; left:-4%; width:min(190px,42%); margin:0; padding:10px 12px; border:1px solid rgba(15,23,42,.08); border-radius:12px; background:var(--white); box-shadow:0 8px 18px rgba(15,23,42,.1); }
+    .footer-review .stars { display:block; color:var(--warm); font-size:22px; letter-spacing:1px; }
+    .footer-review p { margin-top:5px; color:#334155; font-size:12px; line-height:1.35; }
+    .footer-review cite { display:block; margin-top:6px; color:var(--ink); font-size:11px; font-style:normal; font-weight:700; letter-spacing:.075em; text-transform:uppercase; }
+    footer { padding:28px 0; border-top:1px solid var(--line); background:var(--white); color:var(--muted); font-size:14px; }
+    footer .container { display:flex; justify-content:space-between; gap:16px; }
+    @media (max-width:900px) { .calculator,.article-grid,.footer-hero-grid { grid-template-columns:1fr; } .result-card { min-height:auto; } .footer-hero-grid { gap:12px; text-align:center; } .footer-hero-copy h2 { margin:0 auto; } .footer-hero-visual { min-height:auto; margin-top:18px; } .footer-mockup { width:min(100%,520px); } .footer-credential { right:4%; bottom:10%; padding:12px 15px; text-align:left; } .footer-credential strong { font-size:15px; } .footer-credential span { font-size:12px; } .footer-review { bottom:7%; left:1%; width:min(180px,48%); padding:9px 10px; text-align:left; } }
+    @media (max-width:600px) { body { font-size:17px; } .container { width:min(100% - 32px,1160px); } .hero { padding:56px 0 34px; } .calculator-section { padding-bottom:55px; } .calculator,.form-card,.result-card { padding:18px; } .print-section { padding-bottom:58px; } .print-sheet { padding:21px 17px; } .print-heading { display:block; } .print-button { width:100%; margin-top:18px; } .print-grid { grid-template-columns:1fr; } .article-section,.faq-section { padding:58px 0; } .main-hero-footer { padding:64px 0 48px; } footer .container { align-items:center; flex-direction:column; text-align:center; } }
+    @media print { @page { margin:14mm; } body { background:#fff; font-family:Arial,sans-serif; } .hero,.calculator-section,.article-section,.faq-section,.main-hero-footer,footer { display:none !important; } .print-section { display:block !important; padding:0 !important; } .print-sheet { display:block !important; max-width:none; padding:0; border:0; box-shadow:none; } .print-button { display:none !important; } .print-grid { grid-template-columns:repeat(3,1fr); } }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <div class="container">
+        <h1 id="page-title">Quanto custa contratar um funcionário no <strong>Simples Nacional?</strong></h1>
+        <p class="hero-copy">Informe o salário mínimo e a remuneração desejada para estimar salário, FGTS, férias, 13º e os principais encargos da contratação.</p>
+      </div>
+    </section>
+
+    <section class="calculator-section" aria-label="Simulador de contratação">
+      <div class="container">
+        <div class="calculator">
+          <form class="form-card" id="calculator-form" novalidate>
+            <h2>Simule a contratação</h2>
+            <p>Escolha uma ocupação ou informe os valores para uma estimativa personalizada.</p>
+            <div class="fields">
+              <div class="field">
+                <label for="occupation">Profissão <small>(20 presets)</small></label>
+                <select id="occupation" name="occupation">
+                  <option value="" data-multiple="">Personalizar salário</option>
+                  <option value="Auxiliar administrativo" data-multiple="1.2">Auxiliar administrativo</option>
+                  <option value="Assistente administrativo" data-multiple="1.3">Assistente administrativo</option>
+                  <option value="Atendente de loja" data-multiple="1">Atendente de loja</option>
+                  <option value="Operador de caixa" data-multiple="1">Operador de caixa</option>
+                  <option value="Vendedor" data-multiple="1.1">Vendedor</option>
+                  <option value="Recepcionista" data-multiple="1.2">Recepcionista</option>
+                  <option value="Auxiliar de limpeza" data-multiple="1">Auxiliar de limpeza</option>
+                  <option value="Auxiliar de logística" data-multiple="1.1">Auxiliar de logística</option>
+                  <option value="Estoquista" data-multiple="1.1">Estoquista</option>
+                  <option value="Motorista entregador" data-multiple="1.6">Motorista entregador</option>
+                  <option value="Cozinheiro" data-multiple="1.25">Cozinheiro</option>
+                  <option value="Garçom" data-multiple="1">Garçom</option>
+                  <option value="Auxiliar de produção" data-multiple="1.1">Auxiliar de produção</option>
+                  <option value="Pedreiro" data-multiple="1.6">Pedreiro</option>
+                  <option value="Servente de obras" data-multiple="1">Servente de obras</option>
+                  <option value="Operador de telemarketing" data-multiple="1">Operador de telemarketing</option>
+                  <option value="Técnico de enfermagem" data-multiple="1.75">Técnico de enfermagem</option>
+                  <option value="Cuidador de idosos" data-multiple="1.2">Cuidador de idosos</option>
+                  <option value="Assistente de vendas" data-multiple="1.15">Assistente de vendas</option>
+                  <option value="Auxiliar de serviços gerais" data-multiple="1">Auxiliar de serviços gerais</option>
+                </select>
+                <span class="field-hint">A seleção sugere um valor de referência em múltiplos do salário mínimo. Confirme sempre o piso da categoria.</span>
+              </div>
+              <div class="field">
+                <label for="minimum-wage">Salário mínimo vigente</label>
+                <input id="minimum-wage" name="minimum-wage" inputmode="numeric" autocomplete="off" value="R$ 1.621,00" aria-describedby="minimum-hint">
+                <span class="field-hint" id="minimum-hint">Confirme e altere o valor conforme o salário mínimo vigente aplicável.</span>
+              </div>
+              <div class="field">
+                <label for="salary">Salário mensal do funcionário</label>
+                <input id="salary" name="salary" inputmode="numeric" autocomplete="off" placeholder="R$ 0,00">
+              </div>
+              <div class="field">
+                <label for="simple-regime">Enquadramento no Simples Nacional</label>
+                <select id="simple-regime" name="simple-regime">
+                  <option value="standard">Simples Nacional — exceto Anexo IV</option>
+                  <option value="annex4">Simples Nacional — Anexo IV</option>
+                </select>
+                <span class="field-hint">No Anexo IV, a contribuição patronal previdenciária possui tratamento separado do DAS.</span>
+              </div>
+              <div class="field">
+                <label for="extra-percent">Outros custos mensais <small>(opcional, em % do salário)</small></label>
+                <input id="extra-percent" name="extra-percent" type="number" min="0" max="100" step="0.01" value="0" inputmode="decimal">
+                <span class="field-hint">Use para benefícios ou custos próprios da empresa já estimados. Não preencha sem uma referência confiável.</span>
+              </div>
+              <div class="switch"><input id="termination" name="termination" type="checkbox"><label for="termination">Incluir provisão estimada de multa de 40% do FGTS em uma eventual dispensa sem justa causa. <small>É uma reserva gerencial opcional, não um custo mensal obrigatório.</small></label></div>
+            </div>
+            <button class="button" type="submit">Calcular custo estimado <span aria-hidden="true">→</span></button>
+            <p class="error" id="form-error" role="alert" aria-live="polite"></p>
+            <p class="alert"><strong>Atenção:</strong> esta é apenas uma simulação. Antes de contratar, consulte o sindicato da categoria, a convenção ou acordo coletivo de trabalho e um profissional habilitado.</p>
+          </form>
+
+          <section class="result-card" aria-live="polite" aria-labelledby="result-title">
+            <div class="result-empty" id="result-empty"><span aria-hidden="true">⌁</span><p>Preencha os valores para visualizar uma estimativa detalhada do custo da contratação.</p></div>
+            <div class="result-content" id="result-content" hidden>
+              <h2 id="result-title">Custo mensal estimado</h2>
+              <p class="result-context" id="result-context"></p>
+              <div class="cost-value" id="total-cost">R$ 0,00</div>
+              <p class="cost-label">custo médio mensal para a empresa</p>
+              <span class="percentage" id="additional-percent">0% acima do salário</span>
+              <div class="cost-breakdown" id="cost-breakdown"></div>
+              <p class="result-note">A estimativa usa provisões mensais para direitos anuais. Itens como vale-transporte, plano de saúde, horas extras, adicionais, RAT e regras coletivas não entram automaticamente no cálculo.</p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="print-section" aria-label="Resumo imprimível da simulação">
+      <div class="container">
+        <div class="print-sheet" id="print-sheet" hidden>
+          <div class="print-heading"><div><h2>Resumo da simulação de contratação</h2><p id="print-description"></p></div><button class="button print-button" type="button" id="print-button">Imprimir resumo <span aria-hidden="true">↗</span></button></div>
+          <div class="print-grid" id="print-grid"></div>
+          <p class="print-alert"><strong>Importante:</strong> este resultado é uma simulação e não substitui a consulta ao sindicato da categoria, à convenção ou acordo coletivo de trabalho e a um profissional habilitado. Pisos, benefícios, adicionais, jornada, RAT e demais particularidades podem alterar o custo real.</p>
+        </div>
+      </div>
+    </section>
+
+    <article class="article-section" aria-labelledby="article-title">
+      <div class="container article-grid">
+        <div class="article-copy">
+          <p class="eyebrow">Planeje antes de contratar</p>
+          <h2 class="section-title" id="article-title">O salário é só uma parte do <strong>custo de uma contratação.</strong></h2>
+          <p>Contratar pode acelerar a empresa, mas a decisão precisa considerar o custo completo. Além da remuneração mensal, há direitos trabalhistas que precisam ser provisionados, como 13º salário, férias com adicional de um terço e FGTS.</p>
+          <p>Para empresas optantes pelo Simples Nacional, o enquadramento da atividade também importa. Em geral, a contribuição patronal está no DAS; nas atividades do Anexo IV, porém, ela tem tratamento diferente. Por isso, esta ferramenta mostra as duas premissas, mas não substitui uma análise da empresa.</p>
+          <p class="source-note">Referências normativas: <a href="https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm" target="_blank" rel="noopener noreferrer">Lei Complementar nº 123/2006</a>, <a href="https://www.planalto.gov.br/ccivil_03/leis/l8036consol.htm" target="_blank" rel="noopener noreferrer">Lei nº 8.036/1990 (FGTS)</a> e <a href="https://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm" target="_blank" rel="noopener noreferrer">CLT</a>.</p>
+        </div>
+        <div class="assumptions" aria-label="Premissas do simulador">
+          <section class="assumption"><h3>Direitos provisionados</h3><p>13º salário (1/12 ao mês) e férias acrescidas de 1/3 (1/12 ao mês) entram como previsão mensal para dar uma visão mais realista do custo anual.</p></section>
+          <section class="assumption"><h3>FGTS e reflexos</h3><p>O cálculo apresenta o depósito de FGTS de 8% sobre a remuneração mensal e os reflexos estimados sobre as provisões de 13º e férias.</p></section>
+          <section class="assumption"><h3>O que precisa ser conferido</h3><p>Piso da categoria, sindicato, convenção coletiva, benefícios, adicionais, jornada, grau de risco e particularidades da atividade podem alterar o resultado.</p></section>
+        </div>
+      </div>
+    </article>
+
+    <section class="faq-section" aria-labelledby="faq-title">
+      <div class="container faq">
+        <h2 id="faq-title">Dúvidas sobre o custo de contratação</h2>
+        <details><summary>O que esta calculadora considera?</summary><p>Ela estima salário, provisões de 13º salário e férias acrescidas de um terço, FGTS, reflexos do FGTS sobre essas provisões, contribuição patronal para o cenário Anexo IV e um campo opcional de custos adicionais.</p></details>
+        <details><summary>Empresas do Simples Nacional pagam contribuição patronal?</summary><p>Em regra, empresas do Simples recolhem a contribuição patronal dentro do DAS. Atividades enquadradas no Anexo IV possuem tratamento próprio. Confirme o anexo e as regras aplicáveis ao seu caso antes de contratar.</p></details>
+        <details><summary>Por que preciso olhar a convenção coletiva?</summary><p>A convenção ou acordo coletivo pode definir piso salarial, benefícios, adicionais e outras condições que impactam diretamente o custo de contratação. Por isso, ela deve ser consultada antes de formalizar a admissão.</p></details>
+      </div>
+    </section>
+
+    <section class="main-hero-footer" aria-labelledby="footer-headline">
+      <div class="container"><div class="footer-hero-grid"><div class="footer-hero-copy"><h2 id="footer-headline">Contabilidade para ME e EPP e <strong>o contador não some.</strong></h2><a class="button" href="https://www.jandersonmelo.com.br/">Falar agora <span aria-hidden="true">→</span></a></div><div class="footer-hero-visual"><img class="footer-mockup" src="https://www.jandersonmelo.com.br/imgs/mockup-principal.webp" alt="Exemplo de relatório contábil enviado para a empresa"><div class="footer-credential" aria-label="Janderson Melo, CRC PA 023305"><strong>Janderson Melo</strong><span>CRC/PA 023305</span></div><figure class="footer-review" aria-label="Avaliação de Vicente Dias no Google"><span class="stars" aria-label="5 de 5 estrelas">★★★★★</span><p>“Sem dúvidas o melhor. Sempre atencioso com seus clientes, nas explicações e direções a serem tomadas.”</p><cite>Vicente Dias</cite></figure></div></div></div>
+    </section>
+  </main>
+  <footer><div class="container"><p>© Janderson Melo | Contador</p><p>CRC/PA 023305</p></div></footer>
+  <script>
+    (() => {
+      const currencyFormatter = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
+      const plainFormatter = new Intl.NumberFormat("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      const minimumInput = document.getElementById("minimum-wage");
+      const salaryInput = document.getElementById("salary");
+      const occupation = document.getElementById("occupation");
+      const regime = document.getElementById("simple-regime");
+      const extras = document.getElementById("extra-percent");
+      const termination = document.getElementById("termination");
+      const form = document.getElementById("calculator-form");
+      const error = document.getElementById("form-error");
+      const empty = document.getElementById("result-empty");
+      const result = document.getElementById("result-content");
+      const breakdown = document.getElementById("cost-breakdown");
+      const printSheet = document.getElementById("print-sheet");
+      const printGrid = document.getElementById("print-grid");
+
+      const parseBRL = (value) => {
+        const cleaned = String(value || "").replace(/[^0-9,]/g, "");
+        if (!cleaned) return 0;
+        if (cleaned.includes(",")) return Number(cleaned.replace(/\./g, "").replace(",", ".")) || 0;
+        return Number(cleaned) || 0;
+      };
+      const formatBRL = (value) => currencyFormatter.format(Number(value) || 0);
+      const formatPercent = (value) => `${plainFormatter.format(value)}%`;
+      const maskCurrency = (input) => {
+        const digits = input.value.replace(/\D/g, "");
+        if (!digits) { input.value = ""; return; }
+        input.value = `R$ ${Number(digits).toLocaleString("pt-BR")}`;
+      };
+      const fullCurrency = (input) => {
+        const number = parseBRL(input.value);
+        input.value = number ? formatBRL(number) : "";
+      };
+      [minimumInput, salaryInput].forEach((input) => {
+        input.addEventListener("focus", () => { input.value = parseBRL(input.value) || ""; });
+        input.addEventListener("input", () => { maskCurrency(input); });
+        input.addEventListener("blur", () => { fullCurrency(input); });
+      });
+
+      occupation.addEventListener("change", () => {
+        const option = occupation.options[occupation.selectedIndex];
+        const multiple = Number(option.dataset.multiple || 0);
+        const minimum = parseBRL(minimumInput.value);
+        if (multiple && minimum) salaryInput.value = formatBRL(minimum * multiple);
+      });
+      minimumInput.addEventListener("change", () => {
+        const option = occupation.options[occupation.selectedIndex];
+        const multiple = Number(option.dataset.multiple || 0);
+        const minimum = parseBRL(minimumInput.value);
+        if (multiple && minimum) salaryInput.value = formatBRL(minimum * multiple);
+      });
+
+      const row = (label, value, className = "") => `<div class="cost-row ${className}"><span>${label}</span><strong>${formatBRL(value)}</strong></div>`;
+      const printItem = (label, value) => `<div class="print-item"><span>${label}</span><strong>${value}</strong></div>`;
+      const calculate = () => {
+        const minimum = parseBRL(minimumInput.value);
+        const salary = parseBRL(salaryInput.value);
+        const extraRate = Math.max(0, Math.min(100, Number(extras.value) || 0)) / 100;
+        error.textContent = "";
+        if (!minimum || !salary) { error.textContent = "Informe o salário mínimo e o salário mensal para calcular."; return; }
+        if (salary < minimum) { error.textContent = "O salário informado está abaixo do salário mínimo digitado. Confira o piso legal e o piso da categoria antes de continuar."; return; }
+        const thirteenth = salary / 12;
+        const vacation = salary * (4 / 3) / 12;
+        const fgtsSalary = salary * 0.08;
+        const fgtsThirteenth = thirteenth * 0.08;
+        const fgtsVacation = vacation * 0.08;
+        const provisionBase = salary + thirteenth + vacation;
+        const cppBase = salary + thirteenth + (salary / 12);
+        const cpp = regime.value === "annex4" ? cppBase * 0.20 : 0;
+        const terminationReserve = termination.checked ? (fgtsSalary + fgtsThirteenth + fgtsVacation) * 0.40 : 0;
+        const otherCosts = salary * extraRate;
+        const total = provisionBase + fgtsSalary + fgtsThirteenth + fgtsVacation + cpp + terminationReserve + otherCosts;
+        const percentage = ((total / salary) - 1) * 100;
+        const job = occupation.value || "Simulação personalizada";
+        const regimeText = regime.options[regime.selectedIndex].text;
+        const rows = [
+          ["Salário mensal", salary],
+          ["Provisão de 13º salário (8,33%)", thirteenth],
+          ["Provisão de férias + 1/3 (11,11%)", vacation],
+          ["FGTS mensal (8%)", fgtsSalary],
+          ["FGTS sobre 13º (0,67%)", fgtsThirteenth],
+          ["FGTS sobre férias (0,89%)", fgtsVacation]
+        ];
+        if (cpp) rows.push(["CPP estimada do Anexo IV (20%)", cpp]);
+        if (terminationReserve) rows.push(["Reserva de multa do FGTS (opcional)", terminationReserve]);
+        if (otherCosts) rows.push([`Outros custos informados (${plainFormatter.format(extraRate * 100)}%)`, otherCosts]);
+        breakdown.innerHTML = rows.map(([label, value]) => row(label, value)).join("") + row("Custo mensal estimado", total, "total");
+        document.getElementById("result-context").textContent = `${job} · ${regimeText}`;
+        document.getElementById("total-cost").textContent = formatBRL(total);
+        document.getElementById("additional-percent").textContent = `${formatPercent(percentage)} acima do salário`;
+        empty.hidden = true;
+        result.hidden = false;
+        printSheet.hidden = false;
+        document.getElementById("print-description").textContent = `${job} · ${regimeText}`;
+        printGrid.innerHTML = [
+          printItem("Salário mínimo informado", formatBRL(minimum)),
+          printItem("Salário mensal", formatBRL(salary)),
+          printItem("Encargos e provisões", formatBRL(total - salary)),
+          printItem("Custo mensal estimado", formatBRL(total)),
+          printItem("Custo anual estimado", formatBRL(total * 12)),
+          printItem("Acréscimo sobre o salário", formatPercent(percentage))
+        ].join("");
+        printSheet.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      };
+      form.addEventListener("submit", (event) => { event.preventDefault(); calculate(); });
+      document.getElementById("print-button").addEventListener("click", () => window.print());
+    })();
+  </script>
+</body>
+</html>
