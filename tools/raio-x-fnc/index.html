@@ -82,6 +82,13 @@
     .action-plan h3{max-width:650px;margin:0 auto;color:var(--ink);font-size:clamp(26px,4vw,38px);line-height:1.15;letter-spacing:-.04em}
     .action-plan .button{min-height:58px;margin-top:22px;padding:15px 30px;background:#059669;box-shadow:0 10px 25px rgba(5,150,105,.28);font-size:17px}
     .action-plan .button:hover{background:#047857}
+    .loading-checklist{display:grid;gap:14px;width:min(100%,360px);margin:24px auto 0;padding:0;list-style:none;text-align:left}
+    .loading-track{max-width:420px;height:14px;background:#d1e7da;box-shadow:inset 0 1px 3px rgba(15,23,42,.12)}
+    .loading-track span{background:linear-gradient(90deg,#059669,#10b981)}
+    .loading-step{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:16px}
+    .loading-step__icon{display:grid;place-items:center;width:26px;height:26px;flex:none;border:2px solid #cbd5e1;border-radius:50%;color:transparent;font-size:15px;font-weight:700}
+    .loading-step.is-complete{color:var(--ink);font-weight:600}
+    .loading-step.is-complete .loading-step__icon{border-color:#059669;background:#059669;color:#fff}
     .answer:hover{border-color:#cbd5e1;background:#fff;transform:none}
     .answer:focus-visible{border-color:var(--green-dark)}
     .answer--yes,.answer--yes:hover{color:#047857;background:#f0fdf4;border-color:#bbf7d0}
@@ -90,6 +97,7 @@
     .answer--no .answer-icon{color:#b91c1c;background:#fee2e2}
     .answer.is-selected,.answer.is-selected:hover{border-color:#059669;box-shadow:0 0 0 3px #10b981}
     .answer--no.is-selected,.answer--no.is-selected:hover{border-color:#dc2626;box-shadow:0 0 0 3px #ef4444}
+    #question-text strong,.hero h1 strong{color:#fff;font-weight:700;background:#047857;border-radius:4px;padding:.02em .12em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
     .chart-ring{background:conic-gradient(#dc2626 var(--risk),#e5eee9 0)}
     .confetti-piece{top:50%;left:50%;opacity:0;animation:confetti-burst var(--duration) ease-out var(--delay) both}
     @keyframes confetti-burst{
@@ -104,7 +112,7 @@
   <main>
     <section class="hero">
       <div class="container">
-        <h1>Descubra agora onde sua empresa está perdendo dinheiro</h1>
+        <h1>Descubra agora onde sua empresa está <strong>perdendo dinheiro</strong></h1>
       </div>
     </section>
     <section class="quiz-section" aria-label="Questionário Raio-X Financeiro">
@@ -139,10 +147,13 @@
               </div>
             </div>
             <div id="loading-stage" class="loading-stage" role="status" aria-live="polite" hidden>
-              <div class="loading-ring" aria-hidden="true"></div>
-              <h2 id="loading-message">Analisando suas respostas</h2>
-              <p>Estamos preparando um relatório</p>
+              <h2>Estamos preparando seu relatório</h2>
               <div class="loading-track" aria-hidden="true"><span></span></div>
+              <ul class="loading-checklist">
+                <li id="loading-step-1" class="loading-step"><span class="loading-step__icon" aria-hidden="true">✓</span><span>Analisando respostas</span></li>
+                <li id="loading-step-2" class="loading-step"><span class="loading-step__icon" aria-hidden="true">✓</span><span>Gerando relatório</span></li>
+                <li id="loading-step-3" class="loading-step"><span class="loading-step__icon" aria-hidden="true">✓</span><span>Finalizando relatório</span></li>
+              </ul>
             </div>
           </div>
         </div>
@@ -248,11 +259,26 @@
         }
       ];
       const $ = (id) => document.getElementById(id);
+      const questionHighlights = ["precifica corretamente", "sistema de controle", "precisão", "contas separadas", "orçamento", "pagar menos"];
       let current = 0;
       let name = "";
       let answers = [];
       let loadingTimer;
+      let checklistTimers = [];
       let answering = false;
+
+      function startLoading() {
+        checklistTimers.forEach((timer) => window.clearTimeout(timer));
+        const steps = ["loading-step-1", "loading-step-2", "loading-step-3"];
+        steps.forEach((id) => $(id).classList.remove("is-complete"));
+        steps.forEach((id, index) => {
+          const timer = window.setTimeout(() => {
+            $(id).classList.add("is-complete");
+          }, [1500, 3000, 4500][index]);
+          checklistTimers.push(timer);
+        });
+        loadingTimer = window.setTimeout(showResults, 5000);
+      }
 
       function showQuestion() {
         document.querySelector(".hero").hidden = true;
@@ -263,7 +289,21 @@
         $("question-stage").hidden = false;
         $("owner-name").textContent = name;
         $("question-number").textContent = "Pergunta " + (current + 1) + " de " + questions.length;
-        $("question-text").textContent = questions[current].question;
+        const question = questions[current].question;
+        const highlight = questionHighlights[current];
+        const position = question.indexOf(highlight);
+        const questionText = $("question-text");
+        if (position === -1) {
+          questionText.textContent = question;
+        } else {
+          const emphasis = document.createElement("strong");
+          emphasis.textContent = highlight;
+          questionText.replaceChildren(
+            document.createTextNode(question.slice(0, position)),
+            emphasis,
+            document.createTextNode(question.slice(position + highlight.length))
+          );
+        }
         $("progress-label").textContent = current + " de " + questions.length + " respondidas";
         $("progress-bar").setAttribute("aria-valuenow", current);
         $("progress-fill").style.width = (current / questions.length * 100) + "%";
@@ -375,7 +415,7 @@
           if (current === questions.length - 1) {
             $("question-stage").hidden = true;
             $("loading-stage").hidden = false;
-            loadingTimer = window.setTimeout(showResults, 5000);
+            startLoading();
             return;
           }
           current += 1;
@@ -399,6 +439,8 @@
       $("answer-no").addEventListener("click", () => answer(false));
       $("restart").addEventListener("click", () => {
         window.clearTimeout(loadingTimer);
+        checklistTimers.forEach((timer) => window.clearTimeout(timer));
+        checklistTimers = [];
         current = 0;
         answers = [];
         $("results").hidden = true;

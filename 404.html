@@ -32,6 +32,36 @@
     </script>
 
     <style>
+        .profile-socials {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            margin-bottom: 12px;
+        }
+
+        .profile-socials a {
+            display: grid;
+            place-items: center;
+            width: 48px;
+            height: 48px;
+            border: 0;
+            border-radius: 14px;
+            background: transparent;
+            text-decoration: none;
+            font-size: 24px;
+            transition: background .25s ease, transform .25s ease;
+        }
+
+        .profile-socials a:hover {
+            background: transparent;
+            transform: translateY(-3px);
+        }
+
+        .profile-socials a:focus-visible {
+            outline: 3px solid #a9c2ff;
+            outline-offset: 3px;
+        }
+
         /* Destaque especial para a troca de contabilidade */
         .links-wrapper .accounting-banner {
             position: relative;
@@ -282,24 +312,6 @@
                 <i class="fa-solid fa-chevron-right link-arrow"></i>
             </a>
 
-            <a href="https://www.youtube.com/@jandersonmeloc" class="link-item" rel="noopener noreferrer"
-                id="link-youtube">
-                <div class="link-icon-wrapper">
-                    <i class="fa-brands fa-youtube icon-youtube"></i>
-                </div>
-                <span class="link-text">Canal no YouTube</span>
-                <i class="fa-solid fa-chevron-right link-arrow"></i>
-            </a>
-
-            <a href="https://instagram.com/jandersonmeloc" class="link-item" rel="noopener noreferrer"
-                id="link-instagram">
-                <div class="link-icon-wrapper">
-                    <i class="fa-brands fa-instagram icon-instagram"></i>
-                </div>
-                <span class="link-text">Instagram</span>
-                <i class="fa-solid fa-chevron-right link-arrow"></i>
-            </a>
-
             <a href="https://www.jandersonmelo.com.br/tools/raio-x-fnc" class="link-item"
                 rel="noopener noreferrer" id="link-raio-x-financeiro">
                 <div class="link-icon-wrapper">
@@ -379,6 +391,14 @@
 
         <!-- Footer Section -->
         <footer>
+            <div class="profile-socials" aria-label="Redes sociais">
+                <a href="https://instagram.com/jandersonmeloc" id="link-instagram" aria-label="Instagram de Janderson Melo" rel="noopener noreferrer">
+                    <i class="fa-brands fa-instagram icon-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.youtube.com/@jandersonmeloc" id="link-youtube" aria-label="Canal de Janderson Melo no YouTube" rel="noopener noreferrer">
+                    <i class="fa-brands fa-youtube icon-youtube" aria-hidden="true"></i>
+                </a>
+            </div>
             <p>Janderson Melo | Contador</p>
         </footer>
 
