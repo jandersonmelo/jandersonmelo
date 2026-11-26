@@ -82,6 +82,21 @@
     .action-plan h3{max-width:650px;margin:0 auto;color:var(--ink);font-size:clamp(26px,4vw,38px);line-height:1.15;letter-spacing:-.04em}
     .action-plan .button{min-height:58px;margin-top:22px;padding:15px 30px;background:#059669;box-shadow:0 10px 25px rgba(5,150,105,.28);font-size:17px}
     .action-plan .button:hover{background:#047857}
+    .answer:hover{border-color:#cbd5e1;background:#fff;transform:none}
+    .answer:focus-visible{border-color:var(--green-dark)}
+    .answer--yes,.answer--yes:hover{color:#047857;background:#f0fdf4;border-color:#bbf7d0}
+    .answer--no,.answer--no:hover{color:#b91c1c;background:#fef2f2;border-color:#fecaca}
+    .answer--yes .answer-icon{color:#047857;background:#d1fae5}
+    .answer--no .answer-icon{color:#b91c1c;background:#fee2e2}
+    .answer.is-selected,.answer.is-selected:hover{border-color:#059669;box-shadow:0 0 0 3px #10b981}
+    .answer--no.is-selected,.answer--no.is-selected:hover{border-color:#dc2626;box-shadow:0 0 0 3px #ef4444}
+    .chart-ring{background:conic-gradient(#dc2626 var(--risk),#e5eee9 0)}
+    .confetti-piece{top:50%;left:50%;opacity:0;animation:confetti-burst var(--duration) ease-out var(--delay) both}
+    @keyframes confetti-burst{
+      0%{opacity:1;transform:translate(-50%,-50%) scale(.4) rotate(0)}
+      65%{opacity:1}
+      100%{opacity:0;transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(1) rotate(var(--rotation))}
+    }
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}.confetti-layer{display:none}}
   </style>
 </head>
@@ -119,10 +134,9 @@
               <h2 id="question-text" tabindex="-1"></h2>
               <p class="question-hint">Escolha a resposta que melhor descreve a realidade da sua empresa.</p>
               <div class="answer-grid" aria-label="Escolha uma resposta">
-                <button id="answer-yes" class="answer" type="button"><span class="answer-icon" aria-hidden="true">✓</span> Sim</button>
+                <button id="answer-yes" class="answer answer--yes" type="button"><span class="answer-icon" aria-hidden="true">✓</span> Sim</button>
                 <button id="answer-no" class="answer answer--no" type="button"><span class="answer-icon" aria-hidden="true">×</span> Não</button>
               </div>
-              <button id="back" class="back" type="button">Voltar à pergunta anterior</button>
             </div>
             <div id="loading-stage" class="loading-stage" role="status" aria-live="polite" hidden>
               <div class="loading-ring" aria-hidden="true"></div>
@@ -164,7 +178,7 @@
       </div>
       <div class="action-plan">
         <h3>Temos um plano de ação para começar colocar em prática hoje mesmo</h3>
-        <a class="button" href="https://wa.me/5591984938236?text=Ol%C3%A1%2C%20Janderson.%20Fiz%20o%20Raio-X%20Financeiro%20e%20quero%20conhecer%20o%20plano%20de%20a%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer">Começar agora mesmo</a>
+        <a class="button" href="https://wa.me/5591984938236?text=Ol%C3%A1%2C%20Janderson.%20Fiz%20o%20Raio-X%20Financeiro%20e%20quero%20conhecer%20o%20plano%20de%20a%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer">Começar agora mesmo 🚀</a>
       </div>
     </section>
   </main>
@@ -176,7 +190,6 @@
           title: "Precificação incorreta",
           lead: "Você pode estar pagando para trabalhar.",
           impacts: ["Margem de lucro", "Custos de venda", "Impostos"],
-          benchmark: { value: 89, label: "não se sentem confiantes ao formar preços", detail: "Pesquisa da Preço Certo com mais de 10 mil empresas brasileiras, citada pelo Sebrae RN em 2026.", url: "https://blog.rn.sebrae.com.br/precificar-produto-2026/", source: "Sebrae RN" },
           paragraphs: [
             "Sem uma precificação correta, sua empresa pode estar vendendo com prejuízo sem perceber. Você trabalha, vende, paga funcionários, fornecedores e impostos, mas, no final do mês, não sobra dinheiro.",
             "Você pode estar aumentando seu faturamento enquanto diminui seu lucro. Quanto mais vende, maior pode ser o seu prejuízo."
@@ -187,18 +200,16 @@
           title: "Falta de controle financeiro",
           lead: "Sua empresa fatura, mas você não sabe para onde vai o dinheiro.",
           impacts: ["Lucro líquido", "Fluxo de caixa", "Endividamento"],
-          benchmark: { value: 34, label: "não acompanhavam o caixa ou o faziam uma vez ao mês", detail: "Pesquisa Sebrae de 2018 com 1.000 MEIs, reproduzida pelo Banco Central. É uma referência histórica para MEIs.", url: "https://liftchallenge.bcb.gov.br/content/cidadaniafinanceira/documentos_cidadania/RIF/Relatorio%20Cidadania%20Financeira_BCB_16jan_2019.pdf", source: "Banco Central / Sebrae, pág. 128" },
           paragraphs: [
             "Sem um controle financeiro adequado, você não sabe quanto realmente ganha, quanto perde e quanto pode gastar.",
             "Você pode estar trabalhando o mês inteiro para pagar contas, acumulando prejuízos silenciosos e confundindo dinheiro na conta bancária com lucro. Quando perceber o problema, sua empresa já poderá estar endividada."
           ]
         },
         {
-          question: "Você sabe qual produto/serviço vende, qual a porcentagem, tempo de recebimento com precisão?",
+          question: "Você sabe qual produto/serviço mais vende, qual a porcentagem, tempo de recebimento com precisão?",
           title: "Desconhecimento das vendas e recebimentos",
           lead: "O produto ou serviço que você mais vende pode ser justamente aquele que menos dá lucro.",
           impacts: ["Rentabilidade das vendas", "Prazos de recebimento", "Fluxo de caixa"],
-          benchmark: { value: 42, label: "vendiam a prazo de maneira informal, no fiado", detail: "Pesquisa Sebrae de 2018 com 1.000 MEIs, reproduzida pelo Banco Central. O dado trata de vendas a prazo, não de prejuízo.", url: "https://liftchallenge.bcb.gov.br/content/cidadaniafinanceira/documentos_cidadania/RIF/Relatorio%20Cidadania%20Financeira_BCB_16jan_2019.pdf", source: "Banco Central / Sebrae, pág. 128" },
           paragraphs: [
             "Sem conhecer seus indicadores de vendas, você pode estar investindo tempo e dinheiro naquilo que oferece menor retorno financeiro.",
             "Além disso, não controlar os prazos de recebimento pode fazer sua empresa ficar sem dinheiro para pagar fornecedores, funcionários e impostos, mesmo vendendo bem."
@@ -209,7 +220,6 @@
           title: "Mistura do dinheiro pessoal com o empresarial",
           lead: "Você pode estar retirando mais dinheiro do que sua empresa consegue gerar.",
           impacts: ["Retiradas dos sócios", "Capital de giro", "Patrimônio"],
-          benchmark: { value: 50, label: "aproximadamente metade relatou pró-labore sem registro", detail: "Pesquisa Sebrae de 2018 com MEIs, conforme relatório do Banco Central. Aproximação sobre registros de retiradas, não sobre mistura de contas.", url: "https://liftchallenge.bcb.gov.br/content/cidadaniafinanceira/documentos_cidadania/RIF/Relatorio%20Cidadania%20Financeira_BCB_16jan_2019.pdf", source: "Banco Central / Sebrae, pág. 129" },
           paragraphs: [
             "Misturar suas contas pessoais com as da empresa impede que você saiba quanto realmente lucra, quanto pode retirar e quanto precisa manter no negócio.",
             "Suas despesas pessoais podem estar consumindo o capital de giro da empresa, comprometendo seu crescimento e colocando em risco tanto o negócio quanto seu patrimônio pessoal, em determinadas circunstâncias."
@@ -220,7 +230,6 @@
           title: "Falta de planejamento e controle de despesas",
           lead: "Seu lucro pode estar desaparecendo em pequenas despesas que você nem percebe.",
           impacts: ["Custos e despesas", "Metas de vendas", "Investimentos"],
-          benchmark: { value: 22, label: "das empresas encerradas apontaram falta de capital de giro como principal causa", detail: "Dado de 2020 apresentado pelo Sebrae em publicação de planejamento financeiro. Refere-se a empresas que fecharam, não a todas as empresas.", url: "https://sebrae.com.br/content/dam/portal-sebrae/na/midias/documentos/pdfs/ebook-planejamento-financeiro-2027-V1-2026-11-05.pdf", source: "Sebrae, pág. 1" },
           paragraphs: [
             "Sem orçamento, metas e controle de custos, sua empresa fica vulnerável a desperdícios, gastos desnecessários e decisões financeiras equivocadas.",
             "Você não sabe quanto precisa vender para pagar suas contas, quanto pode gastar ou investir. Na prática, está administrando sua empresa no escuro e correndo o risco de trabalhar cada vez mais para ganhar cada vez menos."
@@ -231,7 +240,6 @@
           title: "Falta de planejamento tributário",
           lead: "Você pode estar entregando ao governo um dinheiro que poderia ficar na sua empresa.",
           impacts: ["Tributos", "Lucro", "Capacidade de investimento"],
-          benchmark: { value: 27, label: "apontaram a gestão de tributos entre as principais dificuldades", detail: "Pesquisa do Sebrae com empreendedoras baianas, 3ª edição, realizada em 2025. Refere-se a dificuldades de gestão, não a imposto pago a mais.", url: "https://www.ba.gov.br/seplan/sites/site-seplan/files/2025-07/Pesquisa%20Desafios%20e%20Oportunidades%20empreendedorismo%20feminino%20na%20Bahia.pdf", source: "Pesquisa Sebrae / Governo da Bahia, pág. 21" },
           paragraphs: [
             "Sem planejamento tributário, sua empresa pode estar pagando mais impostos do que deveria, perdendo benefícios fiscais e deixando de aproveitar oportunidades legais de economia.",
             "O problema é que esse dinheiro sai do seu caixa todos os meses, reduzindo seu lucro e sua capacidade de investimento.",
@@ -244,6 +252,7 @@
       let name = "";
       let answers = [];
       let loadingTimer;
+      let answering = false;
 
       function showQuestion() {
         document.querySelector(".hero").hidden = true;
@@ -258,7 +267,9 @@
         $("progress-label").textContent = current + " de " + questions.length + " respondidas";
         $("progress-bar").setAttribute("aria-valuenow", current);
         $("progress-fill").style.width = (current / questions.length * 100) + "%";
-        $("back").hidden = current === 0;
+        $("answer-yes").classList.remove("is-selected");
+        $("answer-no").classList.remove("is-selected");
+        answering = false;
         $("question-text").focus({ preventScroll: true });
       }
       function highlightPainPoints(element, text) {
@@ -305,30 +316,6 @@
         });
         impactMap.append(impactTitle, impactItems);
         article.appendChild(impactMap);
-        const benchmark = document.createElement("div");
-        benchmark.className = "market-benchmark";
-        const heading = document.createElement("div");
-        heading.className = "market-benchmark__heading";
-        const value = document.createElement("strong");
-        value.className = "market-benchmark__value";
-        value.textContent = item.benchmark.value + "%";
-        const label = document.createElement("span");
-        label.className = "market-benchmark__label";
-        label.textContent = item.benchmark.label;
-        heading.append(value, label);
-        const track = document.createElement("div");
-        track.className = "market-benchmark__track";
-        track.setAttribute("role", "img");
-        track.setAttribute("aria-label", item.benchmark.value + "%: " + item.benchmark.label);
-        const fill = document.createElement("div");
-        fill.className = "market-benchmark__fill";
-        fill.style.width = item.benchmark.value + "%";
-        track.appendChild(fill);
-        const detail = document.createElement("p");
-        detail.className = "market-benchmark__detail";
-        detail.textContent = item.benchmark.detail;
-        benchmark.append(heading, track, detail);
-        article.appendChild(benchmark);
         return article;
       }
       function showConfetti() {
@@ -340,10 +327,13 @@
         for (let index = 0; index < 40; index++) {
           const piece = document.createElement("span");
           piece.className = "confetti-piece";
-          piece.style.setProperty("--x", Math.random() * 100 + "%");
-          piece.style.setProperty("--drift", (Math.random() * 180 - 90) + "px");
-          piece.style.setProperty("--duration", (2.4 + Math.random() * 1.2) + "s");
-          piece.style.setProperty("--delay", Math.random() * .6 + "s");
+          const angle = Math.random() * Math.PI * 2;
+          const distance = 120 + Math.random() * 260;
+          piece.style.setProperty("--dx", Math.cos(angle) * distance + "px");
+          piece.style.setProperty("--dy", Math.sin(angle) * distance + "px");
+          piece.style.setProperty("--rotation", (Math.random() * 1080 - 540) + "deg");
+          piece.style.setProperty("--duration", (.6 + Math.random() * .4) + "s");
+          piece.style.setProperty("--delay", Math.random() * .08 + "s");
           piece.style.setProperty("--color", colors[index % colors.length]);
           layer.appendChild(piece);
         }
@@ -377,15 +367,20 @@
         $("results-title").focus({ preventScroll: true });
       }
       function answer(value) {
+        if (answering) return;
+        answering = true;
+        $(value ? "answer-yes" : "answer-no").classList.add("is-selected");
         answers[current] = value;
-        if (current === questions.length - 1) {
-          $("question-stage").hidden = true;
-          $("loading-stage").hidden = false;
-          loadingTimer = window.setTimeout(showResults, 5000);
-          return;
-        }
-        current += 1;
-        showQuestion();
+        window.setTimeout(() => {
+          if (current === questions.length - 1) {
+            $("question-stage").hidden = true;
+            $("loading-stage").hidden = false;
+            loadingTimer = window.setTimeout(showResults, 5000);
+            return;
+          }
+          current += 1;
+          showQuestion();
+        }, 350);
       }
       $("name-form").addEventListener("submit", (event) => {
         event.preventDefault();
@@ -402,13 +397,6 @@
       });
       $("answer-yes").addEventListener("click", () => answer(true));
       $("answer-no").addEventListener("click", () => answer(false));
-      $("back").addEventListener("click", () => {
-        if (current > 0) {
-          current -= 1;
-          answers = answers.slice(0, current);
-          showQuestion();
-        }
-      });
       $("restart").addEventListener("click", () => {
         window.clearTimeout(loadingTimer);
         current = 0;
